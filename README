@@ -1,0 +1,28 @@
+/**
+ * This class extends the basic functionality of Yii's CSecurityManager with
+ * methods to implement asymmetric encryption in small applications. To use this
+ * component you need the OpenSSL PHP extension.
+ * 
+ * @author  i.amniels.com
+ * @version 0.1
+ * 
+ * @license Everyone is permitted to copy and distribute verbatim or modified
+ * copies of this document as long as there is a hyperlink to
+ * http://i.amniels.com/mysql-database-encryption-using-public-private-keys
+ * without the nofollow attribute published with the copy. This document comes
+ * without warranty.
+ *
+ * How to use this component:
+ * 1. Copy this file to the components directory. Enable it in the application
+ *    configuration file under components:
+ * <code>
+ *  'securityManager'=>array(
+ *           'class'=>'SecurityManager',
+ *           'asymPublicKeyFile'=>'application.data.publickey',
+ *  ),
+ * </code>
+ * 2. Generate a key pair using generateAsymNewKeyPair() once (!!).
+ * 3. Encrypt some data with the public key using asymEncrypt($data).
+ * 4. Store a private key in the user's session using storeAsymPrivateKey($key).
+ * 5. Decrypt the encrypted data using asymDecrypt($data).
+ */
